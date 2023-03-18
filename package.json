@@ -1,0 +1,15 @@
+{
+  "name": "websocket-proxy",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "npm run dev:cors-proxy",
+    "dev:websocket-proxy": "deno run --allow-net --watch ./src/websocket-proxy.ts",
+    "dev:cors-proxy": "deno run --allow-net --watch ./src/cors-proxy.ts",
+    "run": "deno run --allow-net ./src/websocket-proxy.ts --port=8081",
+    "compile": "npm run compile:linux",
+    "compile:windows": "deno compile --target x86_64-pc-windows-msvc --allow-net ./src/websocket-proxy.ts",
+    "compile:linux": "deno compile --target x86_64-unknown-linux-gnu --output websocket-proxy.AppImage --allow-net ./src/websocket-proxy.ts"
+  }
+}
