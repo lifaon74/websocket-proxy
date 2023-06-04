@@ -15,6 +15,10 @@ function addCorsIfNeeded(
     headers.set('access-control-allow-origin', '*');
   }
 
+  if (!headers.has('access-control-allow-headers')) {
+    headers.set('access-control-allow-headers', '*');
+  }
+
   return headers;
 }
 
